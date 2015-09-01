@@ -1,0 +1,1 @@
+include ':app', ':minime.mobile.dal', ':minime.mobile.webrequests'
