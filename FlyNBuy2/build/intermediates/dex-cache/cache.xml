@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\user\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.1\support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="C:\Users\user\AndroidStudioProjects\FlyNBuy2\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.1-1d680555450a2fd69c727d48d4877271634c4ea7.jar" />
+    </item>
+    <item
+        jar="C:\Users\user\AndroidStudioProjects\FlyNBuy2\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\libs\internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="C:\Users\user\AndroidStudioProjects\FlyNBuy2\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.1-49d1366924c01e3931724c336a817e54c36e07af.jar" />
+    </item>
+    <item
+        jar="C:\Users\user\AndroidStudioProjects\FlyNBuy2\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="C:\Users\user\AndroidStudioProjects\FlyNBuy2\app\build\intermediates\pre-dexed\debug\classes-a505f39b755d57ac3ea6ff9d440bea66b88fc81f.jar" />
+    </item>
+    <item
+        jar="C:\Users\user\AndroidStudioProjects\FlyNBuy2\app\build\intermediates\exploded-aar\FlyNBuy2\minime.mobile.webrequests\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a74e5e9dcf26e3b0be3da4b973893f48cda377d8">
+        <dex dex="C:\Users\user\AndroidStudioProjects\FlyNBuy2\app\build\intermediates\pre-dexed\debug\classes-28e3722a523d53e175f76b09a4e206b86280f2bf.jar" />
+    </item>
+    <item
+        jar="C:\Users\user\AndroidStudioProjects\FlyNBuy2\app\build\intermediates\exploded-aar\FlyNBuy2\minime.mobile.dal\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f0bc537c676cca9ce80f3120f8631c8bd5597170">
+        <dex dex="C:\Users\user\AndroidStudioProjects\FlyNBuy2\app\build\intermediates\pre-dexed\debug\classes-1eb5ba9edee8621cab245039fff4e977b007cdf4.jar" />
+    </item>
+    <item
+        jar="C:\Users\user\AndroidStudioProjects\FlyNBuy2\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="C:\Users\user\AndroidStudioProjects\FlyNBuy2\app\build\intermediates\pre-dexed\debug\classes-7dc8ebd4c8e0f8685158f2ada358749e121f7620.jar" />
+    </item>
+
+</items>
