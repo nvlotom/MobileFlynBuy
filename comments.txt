@@ -1,0 +1,4 @@
+-login and gethomepageproducts tasks
+-without url from nopcommerce but from a random url from web
+-'app' is the Minime.Mobile.UI
+-without returning json to called ui
