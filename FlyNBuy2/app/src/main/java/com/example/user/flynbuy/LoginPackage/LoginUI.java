@@ -7,9 +7,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.user.flynbuy.R;
 import com.example.user.minimemobiledal.LoginDAL;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -33,10 +36,11 @@ public class LoginUI extends ActionBarActivity {
             public void onClick(View v) {
                 // TODO Auto-generated method stub
 
-                ArrayList<String> cred= GrabCredentials(); //grab credentials from fields
-                LoginDAL startlogin=new LoginDAL(cred,server_part_url);
-                startlogin.SendCredentials();
-
+                ArrayList<String> params_to_send= GrabCredentials(); //grab credentials from fields
+                LoginDAL startlogin=new LoginDAL(params_to_send,server_part_url);
+                String response=startlogin.SendCredentials();
+                TextView view_response= (TextView) findViewById(R.id.response_view_id);
+                view_response.setText(response); //show response on UI
 
 
             }

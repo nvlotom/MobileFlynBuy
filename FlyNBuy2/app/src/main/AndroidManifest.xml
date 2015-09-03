@@ -25,6 +25,14 @@
             android:label="@string/app_name">
         </activity>
 
+        <activity android:name=".GetOrderPackage.GetOrderUI"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity android:name=".RegisterCustomersPackage.RegisterCustomersUI"
+            android:label="@string/app_name">
+        </activity>
+
     </application>
 
 </manifest>

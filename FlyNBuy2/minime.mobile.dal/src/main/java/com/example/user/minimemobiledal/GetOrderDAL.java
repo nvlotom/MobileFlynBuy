@@ -6,19 +6,17 @@ import com.example.user.minimemobilewebrequests.PostWebRequest;
 
 import java.util.ArrayList;
 
-/**
- * Created by user on 9/2/2015.
- */
-public class GetHomePageProductsDAL {
+
+public class GetOrderDAL {
     private String serverpart_url; //server name
     private String directorypart_url; //directory/folder
     private ArrayList<String> parameters; //parameters
     private int action; //non-header, login, sign up, etc
 
-    public GetHomePageProductsDAL(String serverpart_url){
+    public GetOrderDAL(String serverpart_url){
 
         this.serverpart_url=serverpart_url;
-        this.directorypart_url="/Plugins/Misc.WebServices/Remote/NopService.svc/GetHomePageProducts";
+        this.directorypart_url="/Plugins/Misc.WebServices/Remote/NopService.svc/GetOrders";
         this.parameters=null;
         this.action=0;// 0 is for non header
 

@@ -1,5 +1,6 @@
 package com.example.user.minimemobilewebrequests;
 
+import android.os.AsyncTask;
 import android.util.Base64;
 import android.util.Log;
 
@@ -15,7 +16,7 @@ public class PostWebRequest implements OnTaskCompleted {
     private String url;
     private ArrayList<String> parameters;
     private int action;
-
+    private String response;
 
 
     /*constructor*/
@@ -23,12 +24,12 @@ public class PostWebRequest implements OnTaskCompleted {
         this.url=url;
         this.parameters=parameters;
         this.action=action;
-
+        this.response=null;
     }
 
 
     /*send post to server*/
-    public void SendPost(){
+    public String SendPost(){
         String concat_param=BuildParam(); //take url and concat with parameters
 
         String header=null;
@@ -38,7 +39,8 @@ public class PostWebRequest implements OnTaskCompleted {
 
 
 
-        SendRequest(header); //sendRequest with or without header
+       String res= SendRequest(header); //sendRequest with or without header
+        return res;
     }
 
     /*build url with server, directory and parameters part*/
@@ -85,25 +87,48 @@ public class PostWebRequest implements OnTaskCompleted {
     }
 
     /*send post request with async task <-avoid delays*/
-    private void SendRequest(String header){
+    private String SendRequest(String header){
 
         OnTaskCompleted results_transferer=new OnTaskCompleted() {
             @Override
               /*get results (server's response) from post execute in async task class*/
             public void onTaskCompleted(String response) {
-                Log.v("caller class response", response);
+                //Log.v("caller class response", response);
+                GiveResponse(response); //pass response to local variables
             }
         };
         PostWithAsync post= new PostWithAsync(this.url,this.parameters,header,results_transferer);
-        post.execute();
+        String rep="";
+        try {
+            rep = post.execute().get().toString();
+            Log.v("rep ok", rep);
+        }
+        catch (Exception ex){
+            rep="";
+            Log.v("rep error",rep);
+        }
+        return rep;
+
 
     }
 
 
     /*get results (server's response) from post execute in async task class*/
     public void onTaskCompleted(String response) {
-        Log.v("caller class response", response);
+        //Log.v("caller class response", response);
+        GiveResponse(response); //pass response to local variables
     }
 
+    /*fast way to pass response to local variable*/
+    private void GiveResponse(String response){
+        this.response=response;
+
+    }
+
+    /*return response from server*/
+    public String GetResponse(){
+        return this.response;
+
+    }
 
 }

@@ -7,7 +7,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.user.flynbuy.GetHomePageProductsPackage.GetHomePageProductsUI;
+import com.example.user.flynbuy.GetOrderPackage.GetOrderUI;
 import com.example.user.flynbuy.LoginPackage.LoginUI;
+import com.example.user.flynbuy.RegisterCustomersPackage.RegisterCustomersUI;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -18,7 +20,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         //GET SERVER'S URL FROM MINIME.MOBILE.LOCATION
-        String server_part_url="http://localhost:15536";
+        String server_part_url="http://192.168.10.42:15536";
 
         Intent i = new Intent(MainActivity.this, LoginUI.class);
         i.putExtra("server_part_url", server_part_url); //send data to child activity

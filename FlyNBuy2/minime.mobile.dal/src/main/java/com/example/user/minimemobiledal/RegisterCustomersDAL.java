@@ -6,26 +6,27 @@ import com.example.user.minimemobilewebrequests.PostWebRequest;
 
 import java.util.ArrayList;
 
-/**
- * Created by user on 9/2/2015.
- */
-public class GetHomePageProductsDAL {
+
+public class RegisterCustomersDAL {
     private String serverpart_url; //server name
     private String directorypart_url; //directory/folder
     private ArrayList<String> parameters; //parameters
     private int action; //non-header, login, sign up, etc
 
-    public GetHomePageProductsDAL(String serverpart_url){
+    /*constructor*/
+    public RegisterCustomersDAL(ArrayList<String> parameters, String serverpart_url){
 
         this.serverpart_url=serverpart_url;
-        this.directorypart_url="/Plugins/Misc.WebServices/Remote/NopService.svc/GetHomePageProducts";
-        this.parameters=null;
-        this.action=0;// 0 is for non header
-
+        this.directorypart_url="/Plugins/Misc.WebServices/Remote/NopService.svc/RegisterCustomers";
+        this.parameters=parameters;
+        this.action=0;// 1 is for non-header
     }
 
 
-    public String SendRequest(){
+    /*send credentials to post them
+    * return response from server
+    * */
+    public String SendDetails(){
         StringBuilder url_no_param=new StringBuilder(); //faster than string concatenation
         url_no_param.append(this.serverpart_url);
         url_no_param.append(this.directorypart_url);
@@ -37,8 +38,10 @@ public class GetHomePageProductsDAL {
         Log.v("RESPONSE UPPER LEVELLLL",res);
         return res;
 
-
     }
+
+
+
 
 
 }

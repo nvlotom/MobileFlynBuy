@@ -19,7 +19,7 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostWithAsync extends AsyncTask<Void, Void, JSONArray> {
+public class PostWithAsync extends AsyncTask<Void, Void, JSONObject> {
 
     private String url;
     private ArrayList<String> params;
@@ -38,17 +38,18 @@ public class PostWithAsync extends AsyncTask<Void, Void, JSONArray> {
 
 
     @Override
-    protected JSONArray doInBackground(Void... params) {
+    protected JSONObject doInBackground(Void... params) {
         String text = "";
         BufferedReader reader=null;
         try {
 
-            //URL url = new URL(this.url);   <------------ i want this
-            URL url = new URL("http://www.cheesejedi.com/rest_services/get_big_cheese.php");
+            URL url = new URL(this.url);   //<------------ i want this
+            //URL url = new URL("http://www.cheesejedi.com/rest_services/get_big_cheese.php");
             // Send POST data request
             URLConnection conn = url.openConnection();
 
             conn.setDoOutput(true);
+            //conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");///////////
 
             if (this.header != null) { //check for non-empty header
                 conn.setRequestProperty("Authorization", this.header);
@@ -63,6 +64,7 @@ public class PostWithAsync extends AsyncTask<Void, Void, JSONArray> {
 
             if (this.params != null){  //has at least one parameter
 
+
                 for (String param : this.params) { //faster than normal for loop
                     complete_param.append(param);
                     complete_param.append("/");
@@ -70,13 +72,16 @@ public class PostWithAsync extends AsyncTask<Void, Void, JSONArray> {
 
                 complete_param.setLength(complete_param.length() - 1);
 
-                //wr.write(complete_param.toString());   <------- i want this
+
+
+                wr.write(complete_param.toString());//   <------- i want this
+
             }
             else{
                 wr.write("");//no parameters
             }
 
-            wr.write("puzzle=1");   //<--------this must leave
+            //wr.write("puzzle=1");   //<--------this must leave
 
             wr.flush();
 
@@ -128,20 +133,23 @@ public class PostWithAsync extends AsyncTask<Void, Void, JSONArray> {
             catch(Exception ex) {}
         }
 
-        JSONArray jsnresponse=null;
+        JSONObject jsnresponse=null;
         try {
-             jsnresponse= new JSONArray(text);
+             jsnresponse= new JSONObject(text);
         }
         catch (Exception ex){
             Log.v("ERROR HERE", ex.toString());
         }
 
         return jsnresponse;
+
+
     }
 
     @Override
-    protected void onPostExecute(JSONArray jsnresponse) {
+    protected void onPostExecute(JSONObject jsnresponse) {
         // server's response
+
         Log.v("jsonresponse",jsnresponse.toString());
 
         this.results_transferer.onTaskCompleted(jsnresponse.toString()); //return results to caller class

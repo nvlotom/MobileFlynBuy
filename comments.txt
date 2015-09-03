@@ -1,4 +1,6 @@
 -login and gethomepageproducts tasks
--without url from nopcommerce but from a random url from web
+-partial development on getorder and registeruser(params on body)
 -'app' is the Minime.Mobile.UI
--without returning json to called ui
+-async -> make sync
+-no gui on homeproducts
+-need to check for deserialize jsonobj

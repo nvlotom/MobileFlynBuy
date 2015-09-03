@@ -1,4 +1,4 @@
-package com.example.user.flynbuy.GetHomePageProductsPackage;
+package com.example.user.flynbuy.GetOrderPackage;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,19 +10,20 @@ import android.widget.TextView;
 import com.example.user.flynbuy.LoginPackage.LoginUI;
 import com.example.user.flynbuy.R;
 import com.example.user.minimemobiledal.GetHomePageProductsDAL;
+import com.example.user.minimemobiledal.GetOrderDAL;
 
 
-public class GetHomePageProductsUI extends ActionBarActivity {
+public class GetOrderUI extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.get_homepage_products_interface);
+        setContentView(R.layout.get_order_interface);
 
         Bundle bundle = getIntent().getExtras(); //to get data from parent activity
         String server_part_url  = bundle.getString("server_part_url");
 
-        GetHomePageProductsDAL products = new GetHomePageProductsDAL(server_part_url);
+        GetOrderDAL products = new GetOrderDAL(server_part_url);
         String response=products.SendRequest();
         TextView view_response= (TextView) findViewById(R.id.response_view_id);
         view_response.setText(response); //show response on UI
@@ -51,3 +52,4 @@ public class GetHomePageProductsUI extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+
