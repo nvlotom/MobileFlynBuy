@@ -22,7 +22,8 @@ public class MainActivity extends ActionBarActivity {
         //GET SERVER'S URL FROM MINIME.MOBILE.LOCATION
         String server_part_url="http://192.168.10.42:15536";
 
-        Intent i = new Intent(MainActivity.this, LoginUI.class);
+
+        Intent i = new Intent(MainActivity.this, GetHomePageProductsUI.class);
         i.putExtra("server_part_url", server_part_url); //send data to child activity
         startActivity(i);
     }

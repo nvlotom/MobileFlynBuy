@@ -1,4 +1,4 @@
-package com.example.user.minimemobiledal;
+package com.example.user.minimemobiledal.GetOrderPackage;
 
 import android.util.Log;
 

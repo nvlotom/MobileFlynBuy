@@ -1,16 +1,13 @@
 package com.example.user.flynbuy.GetOrderPackage;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.example.user.flynbuy.LoginPackage.LoginUI;
 import com.example.user.flynbuy.R;
-import com.example.user.minimemobiledal.GetHomePageProductsDAL;
-import com.example.user.minimemobiledal.GetOrderDAL;
+import com.example.user.minimemobiledal.GetOrderPackage.GetOrderDAL;
 
 
 public class GetOrderUI extends ActionBarActivity {

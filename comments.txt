@@ -3,4 +3,6 @@
 -'app' is the Minime.Mobile.UI
 -async -> make sync
 -no gui on homeproducts
--need to check for deserialize jsonobj
+-gethomeproducts fixed!
+-check for header names
+-deserialization done

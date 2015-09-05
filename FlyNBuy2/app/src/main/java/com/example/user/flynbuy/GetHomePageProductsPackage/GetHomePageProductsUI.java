@@ -1,15 +1,13 @@
 package com.example.user.flynbuy.GetHomePageProductsPackage;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-import com.example.user.flynbuy.LoginPackage.LoginUI;
 import com.example.user.flynbuy.R;
-import com.example.user.minimemobiledal.GetHomePageProductsDAL;
+import com.example.user.minimemobiledal.GetHomePageProductsPackage.GetHomePageProductsDAL;
 
 
 public class GetHomePageProductsUI extends ActionBarActivity {

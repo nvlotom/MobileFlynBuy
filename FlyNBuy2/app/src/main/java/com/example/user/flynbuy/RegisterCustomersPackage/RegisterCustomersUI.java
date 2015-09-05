@@ -11,8 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.user.flynbuy.R;
-import com.example.user.minimemobiledal.LoginDAL;
-import com.example.user.minimemobiledal.RegisterCustomersDAL;
+import com.example.user.minimemobiledal.RegisterCustomersPackage.RegisterCustomersDAL;
 
 import org.json.JSONObject;
 

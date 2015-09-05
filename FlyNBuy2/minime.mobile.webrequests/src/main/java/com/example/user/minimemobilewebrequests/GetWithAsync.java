@@ -3,23 +3,18 @@ package com.example.user.minimemobilewebrequests;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import org.apache.http.util.ByteArrayBuffer;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
-import java.util.List;
 
-public class PostWithAsync extends AsyncTask<Void, Void, JSONObject> {
+
+public class GetWithAsync extends AsyncTask<Void, Void, JSONObject> {
 
     private String url;
     private ArrayList<String> params;
@@ -28,7 +23,7 @@ public class PostWithAsync extends AsyncTask<Void, Void, JSONObject> {
 
 
     /*constructor*/
-    public PostWithAsync(String url, ArrayList<String> params, String header, OnTaskCompleted results_transferer){
+    public GetWithAsync(String url, ArrayList<String> params, String header, OnTaskCompleted results_transferer){
         this.url=url;
         this.params=params;
         this.header=header;
@@ -46,46 +41,17 @@ public class PostWithAsync extends AsyncTask<Void, Void, JSONObject> {
             URL url = new URL(this.url);   //<------------ i want this
             //URL url = new URL("http://www.cheesejedi.com/rest_services/get_big_cheese.php");
             // Send POST data request
-            HttpURLConnection conn =(HttpURLConnection) url.openConnection();/////////
+            HttpURLConnection conn =(HttpURLConnection) url.openConnection(); //////
 
-            conn.setRequestMethod("POST");//////////
-            conn.setDoOutput(true);
+
+
+            conn.setRequestMethod("GET"); /////////
             //conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");///////////
 
             if (this.header != null) { //check for non-empty header
                 conn.setRequestProperty("Authorization", this.header);
                 Log.v("HEADER->", this.header);
             }
-
-
-            OutputStreamWriter wr = new OutputStreamWriter(conn.getOutputStream());
-
-            StringBuilder complete_param = new StringBuilder();
-
-
-            if (this.params != null){  //has at least one parameter
-
-
-                for (String param : this.params) { //faster than normal for loop
-                    complete_param.append(param);
-                    complete_param.append("/");
-                }
-
-                complete_param.setLength(complete_param.length() - 1);
-
-
-
-                wr.write(complete_param.toString());//   <------- i want this
-
-            }
-            else{
-                wr.write("");//no parameters
-            }
-
-            //wr.write("puzzle=1");   //<--------this must leave
-
-            wr.flush();
-
 
 
 
@@ -136,7 +102,7 @@ public class PostWithAsync extends AsyncTask<Void, Void, JSONObject> {
 
         JSONObject jsnresponse=null;
         try {
-             jsnresponse= new JSONObject(text);
+            jsnresponse= new JSONObject(text);
         }
         catch (Exception ex){
             Log.v("ERROR HERE", ex.toString());

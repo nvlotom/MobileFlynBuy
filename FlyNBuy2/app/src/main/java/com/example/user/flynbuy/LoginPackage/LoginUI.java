@@ -10,9 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.user.flynbuy.R;
-import com.example.user.minimemobiledal.LoginDAL;
-
-import org.w3c.dom.Text;
+import com.example.user.minimemobiledal.LoginPackage.LoginDAL;
 
 import java.util.ArrayList;
 
