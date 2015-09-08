@@ -1,0 +1,4 @@
+-break folders for better management of code
+-gethomepageproducts and login tasks
+-need to see gui
+-need to deserialize

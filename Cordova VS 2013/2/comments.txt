@@ -1,0 +1,5 @@
+-broke folders for better management of code
+-gethomepageproducts and login tasks
+-created master
+-need to create detail
+-need to get proper position the css code
